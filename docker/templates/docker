@@ -1,0 +1,7 @@
+{%- from 'docker/settings.sls' import docker with context %}
+# Use DOCKER_OPTS to modify the daemon startup options.
+
+# By default docker pulls mtu from the host system eth0 mtu value.
+# Some docker containers need to connect to redshift so mtu needs to be explicitly reduced from jumbo frames to standard.
+# See http://docs.aws.amazon.com/redshift/latest/mgmt/connecting-drop-issues.html for why this is required
+DOCKER_OPTS="-g {{ docker_storage_dir }} -s {{ storage_driver }}"

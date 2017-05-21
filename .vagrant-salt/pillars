@@ -1,0 +1,12 @@
+docker:
+  version: 1.12.6-0
+  docker_py_version: 1.7.0
+  gc_exclude:
+    - debian:jessie
+    - debian:wheezy
+    - ubuntu:latest
+  live_restore: true
+  config:
+    uid: 5002
+    docker_storage_dir: /data/docker
+    dockercfg: ""

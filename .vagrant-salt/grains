@@ -1,0 +1,14 @@
+env: dev
+
+datafs:
+  config:
+    ebs:
+      devices:
+        - sdb
+      mount_point: /data
+
+docker:
+  config:
+    storage_driver: overlay2
+    dockercfg: foobar
+    docker_storage_dir: /data/docker

@@ -1,0 +1,3 @@
+{%- for exclude in gc_exclude %}
+{{ exclude }}
+{%- endfor %}

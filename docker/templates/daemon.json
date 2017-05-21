@@ -1,0 +1,9 @@
+{%- from 'docker/settings.sls' import docker with context -%}
+{
+  "graph"          : "{{ docker_storage_dir }}",
+  "storage-driver" : "{{ storage_driver }}",
+  "live-restore"   : {{ live_restore|lower }},
+  "log-opts"       : {
+    "max-size": "{{ max_size }}"
+  }
+}
